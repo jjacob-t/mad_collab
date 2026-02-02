@@ -39,20 +39,27 @@ class HomePage extends StatelessWidget {
               child: Padding(
               padding: EdgeInsets.all(16),
               child: Row(
-              children: [Icon(Icons.person, size: 50, color: Colors.blue),
-                SizedBox(width: 16),
-                Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Student Name', 
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            Text('Major: Computer Science', 
+              children: [Icon(Icons.person, size: 50, color: Colors.blue), SizedBox(width: 16), Column(crossAxisAlignment: CrossAxisAlignment.start,
+                children: [Text('Student Name', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Major: Computer Science', 
               style: TextStyle(color: Colors.grey)),
-          ],
-        ),
+              ],
+          ),
       ],
     ),
   ),
+),
+ListView.builder(
+  shrinkWrap: true,
+  itemCount: 7,
+  itemBuilder: (context, index) {
+    return ListTile(
+      leading: Icon(Icons.star, color: Colors.amber),
+      title: Text('Item ${index + 1}'),
+      subtitle: Text('Description for item ${index + 1}'),
+      trailing: Icon(Icons.arrow_forward_ios),
+    );
+  },
 ),
             // TASK 4: Change the main text below
             Text(
